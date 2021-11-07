@@ -12,16 +12,9 @@
 #SBATCH -o rse-slurm.%N.%j.out # STDOUT
 #SBATCH -e rse-slurm.%N.%j.err # STDERR
 
-<<<<<<< HEAD
 python -u -c "import PyHipp as pyh; \
 import time; \
 import os; \
-=======
-# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
-python -u -c "import PyHipp as pyh; \
-import os; \
-import time; \
->>>>>>> upstream/main
 t0 = time.time(); \
 print(time.localtime()); \
 os.chdir('sessioneye'); \
@@ -29,8 +22,4 @@ pyh.RPLSplit(SkipLFP=False, SkipHighPass=False); \
 print(time.localtime()); \
 print(time.time()-t0);"
 
-<<<<<<< HEAD
 aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:751298973718:awsnotify --message "RSEJobDone"
-=======
-aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:018084650241:awsnotify --message "RSEJobDone"
->>>>>>> upstream/main
